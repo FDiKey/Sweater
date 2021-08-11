@@ -1,3 +1,4 @@
 # Project exclude paths
 /target/
 /Sweater.iml
+/uploads/
