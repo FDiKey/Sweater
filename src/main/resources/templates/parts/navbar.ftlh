@@ -1,5 +1,5 @@
 <#include "security.ftlh">
-
+<#import "login.ftlh" as l>
 
 <nav class="navbar navbar-expand navbar-dark bg-dark">
     <div class="container-fluid">
@@ -21,14 +21,15 @@
                     <a class="nav-link active"  href="/user">Userlist</a>
                 </li>
             </#if>
+            <#if user??>
+                <li class="nav-item">
+                    <a class="nav-link active"  href="/user/profile">Profile</a>
+                </li>
+            </#if>
         </ul>
     </div>
-<!--        <ul class="navbar-nav me-auto">-->
-<!--        <li  class="nav-item">-->
-<!--            <a class="nav-link active" href="/login?logout">logout</a>-->
-<!--        </li>-->
-<!--        </ul>-->
-<!--        -->
-        <div class="navbar-text">${name}</div>
+
+    <div class="navbar-text"><#if isActive> <a href="/profile/${user.getUsername()}"> ${name} </a> <#else> ${name} </#if></div>
+        <div class="mx-3"><@l.logout/></div>
     </div>
 </nav>

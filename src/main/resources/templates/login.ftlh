@@ -3,7 +3,9 @@
 
 <@c.page>
 <div class="card" >
+<div class="card-body">
 <@l.login "/login" false />
+</div>
 </div>
 
 </@c.page>

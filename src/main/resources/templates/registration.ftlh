@@ -7,8 +7,10 @@
 </div>
 ${message?ifExists}
 
-
+<div class="card">
+<div class="card-body">
 <@l.login "/registration" true />
-
+</div>
+</div>
 
 </@c.page>
