@@ -29,7 +29,7 @@
         </ul>
     </div>
 
-    <div class="navbar-text"><#if isActive> <a href="/profile/${user.getUsername()}"> ${name} </a> <#else> ${name} </#if></div>
+    <div class="navbar-text"><#if isActive> <a href="/user/profile"> ${name} </a> <#else> ${name} </#if></div>
         <div class="mx-3"><@l.logout/></div>
     </div>
 </nav>

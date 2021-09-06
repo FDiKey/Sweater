@@ -15,19 +15,30 @@
 
 <p>
 <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample" >
-    add message
+    Add New Message
 </a>
 </p>
 <div class="row">
 <div class="col">
-    <div class="collapse multi-collapse" id="collapseExample">
+    <div class="collapse <#if message??>show<#else>hide</#if>" id="collapseExample">
 
         <form method="post" enctype="multipart/form-data">
             <div class="form-group mb-2">
-                <input type="text" class="form-control" name="text" placeholder="Введите сообщение" />
+                <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}" name="text"
+                       value="<#if message??>${message.text}</#if>" placeholder="Enter the message" />
+                <#if textError??>
+                <div class="invalid-feedback">
+                    ${textError}
+                </div>
+                </#if>
             </div>
             <div class="form-group mb-2">
-                <input type="text" class="form-control" name="tag" placeholder="Тэг"/>
+                <input type="text" class="form-control" name="tag" placeholder="Tag" value="<#if message??>${message.tag}</#if>" />
+                <#if tagError??>
+                <div class="invalid-feedback">
+                    ${tagError}
+                </div>
+                </#if>
             </div>
             <div class="form-group mb-2">
                 <div class="custom-file">

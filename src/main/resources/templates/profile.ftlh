@@ -10,8 +10,32 @@
 <div class="form-group row">
     <label for="password" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-6">
-        <input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
+        <input type="password" class="form-control"
+               id="password"
+               name="password"
+               placeholder="Password"/>
+        <#if passwordError??>
+        <div class="invalid-feedback">
+            ${passwordError}
+        </div>
+    </#if>
     </div>
+</div>
+<div class="form-group row">
+    <label for="password" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-6">
+        <input type="password"
+               class="form-control"
+               id="password2"
+               name="password2"
+               placeholder="Confirmation"/>
+        <#if password2Error??>
+        <div class="invalid-feedback">
+            ${password2Error}
+        </div>
+    </#if>
+    </div>
+
 </div>
 <div class="form-group row">
     <label for="email" class="col-sm-2 col-form-label">Email</label>
@@ -22,8 +46,10 @@
 <div class="form-group row">
 
 <div class="col-sm-6">
-<button type="submit" class="btn btn-primary ">Save</button>
-        </div>
+    <button type="submit" class="btn btn-primary ">Save</button>
+    <button type="submit" class="btn btn-primary ">Reset</button>
+</div>
+
 
         </div>
         </form>
